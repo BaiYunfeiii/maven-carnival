@@ -2,11 +2,11 @@
 
 echo "Configuring git pre-push hook"
 
-cp scripts/pre-push.sh .git/hooks/pre-push
+cp -r scripts/git-hooks/* .git/hooks
 
-SUCCESS=$0
+SUCCESS=$?
 
-if [ $SUCCESS -gt 1 ]; then
+if [ $SUCCESS -ne 0 ]; then
     echo "Configuration Failed"
     exit $SUCCESS
 fi

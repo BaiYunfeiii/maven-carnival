@@ -62,7 +62,7 @@
                         </goals>
                         <configuration>
                             <workingDirectory>${project.basedir}</workingDirectory>
-                            <executable>${project.basedir}/scripts/test.sh</executable>
+                            <executable>${project.basedir}/scripts/config-git-hooks.sh</executable>
                         </configuration>
                     </execution>
                 </executions>
