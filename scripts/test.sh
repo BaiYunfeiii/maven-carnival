@@ -2,7 +2,7 @@
 
 echo "Configuring git pre-push hook"
 
-cp scripts/pre-push.sh .git/hooks/pre-push.sh
+cp scripts/pre-push.sh .git/hooks/pre-push
 
 SUCCESS=$0
 
