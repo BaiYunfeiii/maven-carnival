@@ -18,6 +18,31 @@
         <java.version>11</java.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>Windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <script.extension>.bat</script.extension>
+            </properties>
+        </profile>
+        <profile>
+            <id>unix</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <script.extension>.sh</script.extension>
+            </properties>
+        </profile>
+    </profiles>
+
     <repositories>
         <repository>
             <id>aliyun-public</id>
@@ -62,7 +87,7 @@
                         </goals>
                         <configuration>
                             <workingDirectory>${project.basedir}</workingDirectory>
-                            <executable>${project.basedir}/scripts/config-git-hooks.sh</executable>
+                            <executable>${project.basedir}/scripts/config-git-hooks${script.extension}</executable>
                         </configuration>
                     </execution>
                 </executions>
